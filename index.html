@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morris Sib Week Clues</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .facts-list {
+            list-style: none;
+            counter-reset: fact-counter;
+        }
+        
+        .fact-item {
+            counter-increment: fact-counter;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9ff, #e8f0ff);
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            position: relative;
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s ease-out forwards;
+            animation-delay: calc(var(--item-index) * 0.1s);
+            opacity: 0;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-color: #ff6b6b;
+        }
+        
+        .fact-item::before {
+            content: counter(fact-counter);
+            position: absolute;
+            left: -2px;
+            top: -2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .fact-item p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+            padding-left: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.2rem;
+            }
+            .content {
+                padding: 20px;
+            }
+            .fact-item {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">Morris Sib Week Clues</h1>
+            <p class="subtitle">Discover the secrets and mysteries</p>
+        </div>
+        
+        <div class="content">
+            <ul class="facts-list">
+                <li class="fact-item" style="--item-index: 1">
+                    <p>First clue goes here - replace this with your actual clue content</p>
+                </li>
+                <li class="fact-item" style="--item-index: 2">
+                    <p>Second clue can be placed here - add as many as you need</p>
+                </li>
+                <li class="fact-item" style="--item-index: 3">
+                    <p>Third clue example - these will animate in one by one</p>
+                </li>
+                <li class="fact-item" style="--item-index: 4">
+                    <p>Fourth clue placeholder - each has a numbered indicator</p>
+                </li>
+                <li class="fact-item" style="--item-index: 5">
+                    <p>Fifth clue spot - the design is fully responsive for mobile</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>Morris Sib Week 2025 • Good luck solving the mystery! 🕵️‍♀️</p>
+        </div>
+    </div>
+</body>
+</html>
